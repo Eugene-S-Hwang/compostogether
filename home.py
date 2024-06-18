@@ -24,12 +24,12 @@ def load_data():
 
 # Load data
 st.title("Community Composting Program Weekly Log")
-st.write("Displaying data from Google Sheets")
+# st.write("Displaying data from Google Sheets")
 
 data = load_data()
 
 # Display data
-st.write(data)
+# st.write(data)
 
 # Plotly chart
 if not data.empty:
