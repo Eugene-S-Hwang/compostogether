@@ -3,3 +3,5 @@ plotly
 gspread
 oauth2client
 pandas
+st-aggrid
+sqlite3
