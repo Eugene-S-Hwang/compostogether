@@ -19,7 +19,7 @@ def load_data():
     # # Get all records
     # data = sheet.get_all_records()
     # return pd.DataFrame(data)
-    data =  pd.read_csv("activity.csv")
+    data =  pd.read_csv("Testing_Activity.csv")
     return data
 
 # Load data
