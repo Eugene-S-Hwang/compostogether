@@ -7,3 +7,4 @@ ollama
 langchain
 langchain-chroma
 langchain-community
+pysqlite3-binary

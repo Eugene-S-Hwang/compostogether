@@ -5,6 +5,9 @@ import ollama
 from ollama import Client
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_community.llms import Ollama
+__import__('pysqlite3')
+import sys 
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 modelname = 'ch-doonoi-01:latest'
 # client = Client(host="http://68.173.160.106:11434")
