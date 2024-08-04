@@ -14,8 +14,8 @@ host="http://68.173.160.106:11434"
 llm = Ollama(base_url=host, model="ch-doonoi-01:latest", num_gpu=2)
 
 # Data Loading #######
-from langchain import hub
-from langchain_chroma import Chroma
+# from langchain import hub
+# from langchain_chroma import Chroma
 # from langchain_community.document_loaders import WebBaseLoader
 # from langchain_core.output_parsers import StrOutputParser
 # from langchain_core.runnables import RunnablePassthrough
