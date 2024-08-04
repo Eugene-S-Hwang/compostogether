@@ -5,3 +5,5 @@ oauth2client
 pandas
 ollama
 langchain
+langchain_community
+langchain_chroma

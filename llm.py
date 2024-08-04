@@ -14,12 +14,12 @@ host="http://68.173.160.106:11434"
 llm = Ollama(base_url=host, model="ch-doonoi-01:latest", num_gpu=2)
 
 # Data Loading #######
-# import bs4
-# from langchain import hub
+import bs4
+from langchain import hub
 from langchain_chroma import Chroma
-# from langchain_community.document_loaders import WebBaseLoader
-# from langchain_core.output_parsers import StrOutputParser
-# from langchain_core.runnables import RunnablePassthrough
+from langchain_community.document_loaders import WebBaseLoader
+from langchain_core.output_parsers import StrOutputParser
+from langchain_core.runnables import RunnablePassthrough
 # from langchain_openai import OpenAIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import TextLoader
@@ -28,19 +28,19 @@ from langchain_community.embeddings.sentence_transformer import SentenceTransfor
 # from sentence_transformers import SentenceTransformer
 
 
-# from langchain_core.messages import HumanMessage, SystemMessage
+from langchain_core.messages import HumanMessage, SystemMessage
 import bs4
-# from langchain.chains import create_history_aware_retriever, create_retrieval_chain
-# from langchain.chains.combine_documents import create_stuff_documents_chain
+from langchain.chains import create_history_aware_retriever, create_retrieval_chain
+from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_chroma import Chroma
-# from langchain_community.chat_message_histories import ChatMessageHistory
-# from langchain_community.document_loaders import WebBaseLoader
-# from langchain_core.chat_history import BaseChatMessageHistory
-# from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder, PromptTemplate
-# from langchain_core.runnables.history import RunnableWithMessageHistory
+from langchain_community.chat_message_histories import ChatMessageHistory
+from langchain_community.document_loaders import WebBaseLoader
+from langchain_core.chat_history import BaseChatMessageHistory
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder, PromptTemplate
+from langchain_core.runnables.history import RunnableWithMessageHistory
 # from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-# from langchain_community.document_loaders import BSHTMLLoader
+from langchain_community.document_loaders import BSHTMLLoader
 from langchain.chains import RetrievalQA
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain
@@ -237,3 +237,9 @@ if prompt := st.chat_input("What is up?"):
         response = st.write_stream(get_response(prompt))
     # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": response})
+
+
+# for i in range(5):
+#     question = input("Ask anything: ").split()
+    # result = qa({"question":"What is ComposTogether?"})
+    # print(result["answer"])
