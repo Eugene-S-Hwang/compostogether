@@ -7,4 +7,3 @@ ollama
 langchain
 langchain_community
 langchain_chroma
-bs4

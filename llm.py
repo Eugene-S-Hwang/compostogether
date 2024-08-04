@@ -28,7 +28,7 @@ from langchain_community.embeddings.sentence_transformer import SentenceTransfor
 
 
 from langchain_core.messages import HumanMessage, SystemMessage
-import bs4
+# import bs4
 from langchain.chains import create_history_aware_retriever, create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_chroma import Chroma
