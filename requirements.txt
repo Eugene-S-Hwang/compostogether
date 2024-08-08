@@ -8,3 +8,4 @@ langchain
 langchain-chroma
 langchain-community
 pysqlite3-binary
+protobuf==3.19.*
