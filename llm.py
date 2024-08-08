@@ -5,9 +5,9 @@ import ollama
 from ollama import Client
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_community.llms import Ollama
-__import__('pysqlite3')
-import sys 
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+# __import__('pysqlite3')
+# import sys 
+# sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 modelname = 'ch-doonoi-01:latest'
 # client = Client(host="http://68.173.160.106:11434")
@@ -242,6 +242,6 @@ if prompt := st.chat_input("What is up?"):
 
 
 # for i in range(5):
-#     question = input("Ask anything: ").split()
-    # result = qa({"question":"What is ComposTogether?"})
-    # print(result["answer"])
+#     question = input("Ask anything: ").strip()
+#     result = qa({"question":"What is ComposTogether?"})
+#     print(result["answer"])
