@@ -217,10 +217,11 @@ def get_response(question):
     
     yield result["answer"]
 
-def format_docs(docs):
-    return "\n\n".join(doc.page_content for doc in docs)
+# def format_docs(docs):
+#     return "\n\n".join(doc.page_content for doc in docs)
 
-st.title("ComposTogether AI Q&A Answerer")
+
+# st.title("ComposTogether AI Q&A Answerer")
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
