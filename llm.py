@@ -76,6 +76,22 @@ vectorstore = Chroma.from_documents(documents=splits, embedding=embedding_functi
 # Retrieve and generate using the relevant snippets of the blog.
 retriever = vectorstore.as_retriever()
 
+## DEPRECATED
+
+# system_prompt = """Use the following pieces of context to answer the question at the end. If you don't know the answer and the question is specifically regarding ComposTogether (the community composting program based in Fort Lee), just say that you don't know and to email the program, don't try to make up an answer. If you don't know the answer and the question is not specifically about ComposTogether, you can get the answer from the Internet but never make up an answer. Use three sentences maximum. Keep the answer as concise as possible. Always say "thanks for asking!" at the end of the answer. 
+# {context}
+# Question: {question}
+# Helpful Answer:"""
+# QA_CHAIN_PROMPT = PromptTemplate.from_template(system_prompt)
+
+# qa_chain = RetrievalQA.from_chain_type(
+#     llm,
+#     retriever=retriever,
+#     return_source_documents=True,
+#     chain_type_kwargs={"prompt":QA_CHAIN_PROMPT}
+# )
+
+## DEPRECATED
 
 # ### Contextualize question ###
 # contextualize_q_system_prompt = (
@@ -100,28 +116,17 @@ retriever = vectorstore.as_retriever()
 
 
 # ### Answer question ###
-# # system_prompt = (
-# #     "You are an assistant for question-answering tasks. "
-# #     "Use the following pieces of retrieved context to answer "
-# #     "the question. If you don't know the answer, say that you "
-# #     "don't know. Use three sentences maximum and keep the "
-# #     "answer concise."
-# #     "\n\n"
-# #     "{context}"
-# # )
-
-# system_prompt = """Use the following pieces of context to answer the question at the end. If you don't know the answer and the question is specifically regarding ComposTogether (the community composting program based in Fort Lee), just say that you don't know and to email the program, don't try to make up an answer. If you don't know the answer and the question is not specifically about ComposTogether, you can get the answer from the Internet but never make up an answer. Use three sentences maximum. Keep the answer as concise as possible. Always say "thanks for asking!" at the end of the answer. 
-# {context}
-# Question: {question}
-# Helpful Answer:"""
-# QA_CHAIN_PROMPT = PromptTemplate.from_template(system_prompt)
-
-# qa_chain = RetrievalQA.from_chain_type(
-#     llm,
-#     retriever=retriever,
-#     return_source_documents=True,
-#     chain_type_kwargs={"prompt":QA_CHAIN_PROMPT}
+# system_prompt = (
+#     "You are an assistant for question-answering tasks. "
+#     "Use the following pieces of retrieved context to answer "
+#     "the question. If you don't know the answer, say that you "
+#     "don't know. Use three sentences maximum and keep the "
+#     "answer concise."
+#     "\n\n"
+#     "{context}"
 # )
+
+
 
 # qa_prompt = ChatPromptTemplate.from_messages(
 
@@ -179,6 +184,10 @@ retriever = vectorstore.as_retriever()
 #     simmiliarity_score =  similarity_model.similarity(question_embedding, response_embedding)
 #     return simmiliarity_score > threshold
 
+
+
+## DEPRECATED
+
 memory = ConversationBufferMemory(
     memory_key="chat_history", #chat history as a list instead of a string
     return_messages=True
@@ -189,6 +198,8 @@ qa = ConversationalRetrievalChain.from_llm(
     retriever=retriever,
     memory=memory
 )
+
+## DEPRECATED
 
 # Streamed response emulator
 def get_response(question):
