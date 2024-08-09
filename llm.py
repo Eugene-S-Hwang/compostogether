@@ -76,74 +76,63 @@ vectorstore = Chroma.from_documents(documents=splits, embedding=embedding_functi
 # Retrieve and generate using the relevant snippets of the blog.
 retriever = vectorstore.as_retriever()
 
-## DEPRECATED
+### Contextualize question ###
+contextualize_q_system_prompt = (
+    "Given a chat history and the latest user question "
+    "which might reference context in the chat history, "
+    "formulate a standalone question which can be understood "
+    "without the chat history. Do NOT answer the question, "
+    "just reformulate it if needed and otherwise return it as is."
+)
 
-# system_prompt = """Use the following pieces of context to answer the question at the end. If you don't know the answer and the question is specifically regarding ComposTogether (the community composting program based in Fort Lee), just say that you don't know and to email the program, don't try to make up an answer. If you don't know the answer and the question is not specifically about ComposTogether, you can get the answer from the Internet but never make up an answer. Use three sentences maximum. Keep the answer as concise as possible. Always say "thanks for asking!" at the end of the answer. 
-# {context}
-# Question: {question}
-# Helpful Answer:"""
-# QA_CHAIN_PROMPT = PromptTemplate.from_template(system_prompt)
+contextualize_q_prompt = ChatPromptTemplate.from_messages(
+    [
+        ("system", contextualize_q_system_prompt),
+        MessagesPlaceholder("chat_history"),
+        ('human', "{input}")
+    ]
+)
 
-# qa_chain = RetrievalQA.from_chain_type(
-#     llm,
-#     retriever=retriever,
-#     return_source_documents=True,
-#     chain_type_kwargs={"prompt":QA_CHAIN_PROMPT}
-# )
-
-## DEPRECATED
-
-# ### Contextualize question ###
-# contextualize_q_system_prompt = (
-#     "Given a chat history and the latest user question "
-#     "which might reference context in the chat history, "
-#     "formulate a standalone question which can be understood "
-#     "without the chat history. Do NOT answer the question, "
-#     "just reformulate it if needed and otherwise return it as is."
-# )
-
-# contextualize_q_prompt = ChatPromptTemplate.from_messages(
-#     [
-#         ("system", contextualize_q_system_prompt),
-#         MessagesPlaceholder("chat_history"),
-#         ('human', "{input}")
-#     ]
-# )
-
-# history_aware_retriever = create_history_aware_retriever(
-#     llm, retriever, contextualize_q_prompt
-# )
+history_aware_retriever = create_history_aware_retriever(
+    llm, retriever, contextualize_q_prompt
+)
 
 
-# ### Answer question ###
-# system_prompt = (
-#     "You are an assistant for question-answering tasks. "
-#     "Use the following pieces of retrieved context to answer "
-#     "the question. If you don't know the answer, say that you "
-#     "don't know. Use three sentences maximum and keep the "
-#     "answer concise."
-#     "\n\n"
-#     "{context}"
-# )
+### Answer question ###
+system_prompt = (
+    "You are an assistant for question-answering tasks. "
+    """Use the following pieces of context to answer the question at the end. 
+    If you don't know the answer and the question is 
+    specifically regarding ComposTogether (the community composting program based in Fort Lee), 
+    just say that you don't know and to email the program, 
+    never try to make up an answer. If you don't know the answer and the 
+    question is not specifically about ComposTogether but related to composting, you can get the 
+    answer from the Internet but never make up an answer. If the question is completely unrelated to composting or
+    ComposTogether, specify that you only answer questions regarding ComposTogether. Use three sentences maximum. 
+    Keep the answer as concise as possible. Also, never begin an answer with "According to the context".
+    Finally, always say "thanks for asking!" at the end of the answer. """
+    "\n\n"
+    "{context}"
+)
 
 
 
-# qa_prompt = ChatPromptTemplate.from_messages(
+qa_prompt = ChatPromptTemplate.from_messages(
 
-#         [
-#             ('system', system_prompt), 
-#             MessagesPlaceholder("chat_history"),
-#             ('human', "{input}")
-#         ]
-# )
+        [
+            ('system', system_prompt), 
+            MessagesPlaceholder("chat_history"),
+            ('human', "{input}")
+        ]
+)
 
-# question_answer_chain = create_stuff_documents_chain(llm, qa_prompt)
+question_answer_chain = create_stuff_documents_chain(llm, qa_prompt)
 
-# rag_chain = create_retrieval_chain(history_aware_retriever, question_answer_chain)
+rag_chain = create_retrieval_chain(history_aware_retriever, question_answer_chain)
 
 
 
-# ### Statefully manage chat history ###
+### Statefully manage chat history ###
 # store = {}
 
 
@@ -174,34 +163,36 @@ retriever = vectorstore.as_retriever()
 # )
 
 
-# Load the sentence transformer model for computing similarities
-# similarity_model = SentenceTransformer('all-MiniLM-L6-v2')
+# # Load the sentence transformer model for computing similarities
+# # similarity_model = SentenceTransformer('all-MiniLM-L6-v2')
 
-# # Function to determine if the context contains a valid answer
-# def is_answer_in_context(context_response, question, threshold=0.7):
-#     question_embedding = similarity_model.encode(question, convert_to_tensor=True)
-#     response_embedding = similarity_model.encode(context_response, convert_to_tensor=True)
-#     simmiliarity_score =  similarity_model.similarity(question_embedding, response_embedding)
-#     return simmiliarity_score > threshold
+# # # Function to determine if the context contains a valid answer
+# # def is_answer_in_context(context_response, question, threshold=0.7):
+# #     question_embedding = similarity_model.encode(question, convert_to_tensor=True)
+# #     response_embedding = similarity_model.encode(context_response, convert_to_tensor=True)
+# #     simmiliarity_score =  similarity_model.similarity(question_embedding, response_embedding)
+# #     return simmiliarity_score > threshold
 
 
 
 ## DEPRECATED
 
-memory = ConversationBufferMemory(
-    memory_key="chat_history", #chat history as a list instead of a string
-    return_messages=True
-)
+# memory = ConversationBufferMemory(
+#     memory_key="chat_history", #chat history as a list instead of a string
+#     return_messages=True
+# )
 
-qa = ConversationalRetrievalChain.from_llm(
-    llm,
-    retriever=retriever,
-    memory=memory
-)
+# qa = ConversationalRetrievalChain.from_llm(
+#     llm,
+#     retriever=retriever,
+#     memory=memory
+# )
 
 ## DEPRECATED
 
 # Streamed response emulator
+
+chat_history = []
 def get_response(question):
 
     # response = rag_chain.invoke(question)
@@ -221,13 +212,15 @@ def get_response(question):
     #     fallback_response = llm.invoke(question)
     #     yield "## From LLM: \n" + fallback_response
 
-    result = qa({"question":question})
-    return result["answer"]
+    result = rag_chain.invoke({"input": question, "chat_history": chat_history})
+    chat_history.extend([HumanMessage(content=question), result["answer"]])
+    
+    yield result["answer"]
 
 def format_docs(docs):
     return "\n\n".join(doc.page_content for doc in docs)
 
-st.title("Test AI")
+st.title("ComposTogether AI Q&A Answerer")
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
@@ -248,7 +241,7 @@ if prompt:
 
     # Display assistant response in chat message container
     with st.chat_message("assistant"):
-        response = st.write(get_response(prompt))
+        response = st.write_stream(get_response(prompt))
     # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": response})
 
