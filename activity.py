@@ -37,7 +37,7 @@ data = load_data()
 
 # Plotly chart
 if not data.empty:
-    fig = px.line(data, x='Date', y='Check Temperature', title='History of Temperature')
+    fig = px.line(data, x='Date', y='Check Temperature', title='History of Temperature (Fahrenheit)')
     st.plotly_chart(fig)
 else:
     st.write("No data available")
@@ -52,7 +52,7 @@ if not data.empty:
         prev = green_data["Greens"][i]
         # st.write(green_data["Greens"][i])
         # st.write("______________")
-    fig = px.line(green_data, x='Date', y='Greens', title="History of Amount of Greens")
+    fig = px.line(green_data, x='Date', y='Greens', title="History of Amount of Greens in Buckets")
     st.plotly_chart(fig)
 else:
     st.write("No graph available")
@@ -67,7 +67,7 @@ if not data.empty:
         prev = brown_data["Browns"][i]
         # st.write(green_data["Greens"][i])
         # st.write("______________")
-    fig = px.line(brown_data, x='Date', y='Browns', title="History of Amount of Browns")
+    fig = px.line(brown_data, x='Date', y='Browns', title="History of Amount of Browns in Buckets")
     st.plotly_chart(fig)
 else:
     st.write("No graph available")
