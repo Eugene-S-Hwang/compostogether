@@ -27,8 +27,8 @@ def load_data():
     # return data
 
 # Load data
-st.title("Community Composting Program Weekly Log")
-st.write("Displaying data from Google Sheets")
+st.title("History of Activity of Compost Bins")
+# st.write("Displaying data from Google Sheets")
 
 data = load_data()
 
