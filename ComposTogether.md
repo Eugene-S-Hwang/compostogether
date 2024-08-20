@@ -24,7 +24,7 @@ Through the help of the Korean Parents Advisory Council, the Fort Lee Department
 
 We formally began on April 19, 2024, where we held an opening ceremony and put our very first batch of food waste into our compost bins. 
 
-Currently, we are meeting for two hours every Sunday or Saturday, as seen in our calendar on the website. All Fort Lee (and nearby) residents and businesses are encouraged to donate food waste and other acceptable materials to our program. Students living in Fort Lee can help our program by signing up as a volunteer. 
+Currently, we are meeting for two hours every Sunday or Saturday, as seen in our calendar on the website. All Fort Lee (and nearby) residents and businesses are encouraged to donate food waste and other acceptable materials to our program. Students living in Fort Lee can help our program by signing up as a volunteer. Unfortunately, adults are unable to become volunteers in our program.
 
 # **DETAILS**
 
