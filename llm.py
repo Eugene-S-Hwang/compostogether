@@ -24,7 +24,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 # from langchain_openai import OpenAIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_community.document_loaders import TextLoader
+from langchain_community.document_loaders import UnstructuredMarkdownLoader
 
 from langchain_community.embeddings.sentence_transformer import SentenceTransformerEmbeddings
 # from sentence_transformers import SentenceTransformer
@@ -62,7 +62,7 @@ md_path = "./ComposTogether.md"
 #     ),
 # )
 
-loader = TextLoader(md_path)
+loader = UnstructuredMarkdownLoader(md_path)
 docs = loader.load()
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
 splits = text_splitter.split_documents(docs)
@@ -104,12 +104,12 @@ system_prompt = (
     """Use the following pieces of context to answer the question at the end. 
     If you don't know the answer and the question is 
     specifically regarding ComposTogether (the community composting program based in Fort Lee), 
-    just say that you don't know and to email the program, 
+    just say that you don't know this particular detail and to email the program, 
     never try to make up an answer. If you don't know the answer and the 
     question is not specifically about ComposTogether but related to composting, you can get the 
     answer from the Internet but never make up an answer. If the question is completely unrelated to composting or
     ComposTogether, specify that you only answer questions regarding ComposTogether. Use three sentences maximum. 
-    Keep the answer as concise as possible. Also, never begin an answer with "According to the context".
+    Keep the answer as concise as possible. Also, never explicitly state that the answer is based on the given context.
     Finally, always say "thanks for asking!" at the end of the answer. """
     "\n\n"
     "{context}"

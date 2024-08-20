@@ -12,21 +12,41 @@ Instead of throwing the food waste into the trash, composting could recreate the
 
 Many other places are already emplacing composting programs. For example, in South Korea, there is a nationwide program where citizens are required to throw out food waste into a separate bin that is sent to composting facilities. 
 
-Through this program, volunteers would manage a composting bin, collect food waste, and create fertilizer that can be donated or sold in fundraisers. 
+**What ComposTogether is** 
+
+ComposTogether is a student-run organization that will collect food waste from the Fort Lee community and convert it into compost. Our goal is to bring the Fort Lee community together through composting and the shared passion for helping the environment.
+
+We began in a simple Zoom call in August 2023, where we first learned about composting and its viability to help the climate. We became passionate in promoting sustainability in our community and decided to start this program to recycle food waste into fertilizer that will be donated back to the town. 
+
+​​
+
+Through the help of the Korean Parents Advisory Council, the Fort Lee Department of Public Works, the Fort Lee Regional Chamber of Commerce, and the Youth Council of Fort Lee, we raised almost thirty student volunteers and got our very own composting bins in the community garden at Constitution Park. 
+
+We formally began on April 19, 2024, where we held an opening ceremony and put our very first batch of food waste into our compost bins. 
+
+Currently, we are meeting for two hours every Sunday or Saturday, as seen in our calendar on the website. All Fort Lee (and nearby) residents and businesses are encouraged to donate food waste and other acceptable materials to our program. Students living in Fort Lee can help our program by signing up as a volunteer. 
 
 # **DETAILS**
 
 1. The name of this community composting program is ComposTogether.   
-1. We have three compost bins located in the community garden in Constitution Park.  
-1. There are three teams that rotate on managing the composting bins each week. Thus, each volunteer would work once per three weeks.   
-1. We will only accept fruit peelings and leftover vegetables (no dairy, meat, seafood, or cooked products).   
-   1. There cannot be any stickers or inorganic material inputted into the compost bins.  
-1. Some things that volunteers would have to do include:  
+2. We have three compost bins located in the community garden in Constitution Park.  
+3. There are three teams that rotate on managing the composting bins each week. Thus, each volunteer would usually work once per three weeks.   
+4. Although people of any age are able to donate food waste and materials, only students are accepted as volunteers.  
+5. There are two types of materials that we accept:  
+   1. Greens (food waste): food/vegetable scraps, coffee grounds, weeds that will not seed, flowers, tea leaves, fresh leaves, garden waste  
+   2. Browns: Shredded cardboard/paper/kraft paper (without ink and are not glossy), dead leaves, sawdust from untreated wood, chopped twigs or sticks, straw, hay, wood ash  
+6. We cannot accept: meat, dairy products, animal waste, infected/diseased plants, anything treated with chemicals (ex: pesticides), glossy paper/cardboard, plastics, metals  
+7. Some things that volunteers would have to do include:  
    1. Collecting food waste and putting it into the compost bin  
-   1. Making sure only the correct food waste is being collected  
-   1. Turning the compost bin  
-   1. Making sure there is a good balance between food waste and “browns” (ex: dead leaves, wood chips, saw dust, etc)  
-   1. Collecting the compost
+   2. Making sure only the correct food waste is being collected  
+   3. Turning the compost bin  
+   4. Making sure there is a good balance between food waste and “browns” (ex: dead leaves, wood chips, saw dust, etc)  
+   5. Collecting the compost when it is finished  
+   6. Attend occasional meetings/events  
+8. In order to apply as a volunteer, please fill out the google form that is embedded in the website.   
+9. All volunteers need to join a WhatsApp group chat. Here, volunteers would receive notices and announcements, such as which team will be overseeing the composting bins, additional assignments, meetings, and events.  
+10. Applications for donors are only required if you are a business or if you would like a volunteer to pick up food waste.  
+11. In order to donate food waste, please come during the designated composting hours, which is 6PM to 8PM on Sundays or 4PM-6PM on Saturdays. For more information, please check the calendar at the homepage of our website. Please come to the Constitution Park community garden, located near the playground, if you will be dropping off your food waste. 
 
 # **Value**
 
@@ -34,7 +54,7 @@ We are living in a time where the Earth is suffering from environmental problems
 
 This program would help our community by decreasing the amount of food waste and creating fertilizers for gardens. By working on this program, we would start to grow an appreciation for the environment and learn more about the many ways that we could help the Earth. 
 
-Although this may be just a pilot program for now, starting from this moment, it can grow into a full-fledged composting system for our town.
+Although this may be just a pilot program for now, starting from this moment, we hope that it can grow into a full-fledged composting system for our town.
 
 # **Volunteer Members**
 
@@ -44,7 +64,7 @@ The numbers in the parenthesis next to the names represent what grade in school 
 
 - Co-founder/President/Team 1 Captain: Eugene Hwang(12)  
 - Team 2 Captain: Joseph Kim(12)  
-- Co-founder/Team 3 Captain: Allison Kim(11)  
+- Team 3 Captain: Amir-Rayan Siqal(12)  
 - Social Media Manager: Evelyn Kang(11)
 
 **Team 1:**
@@ -80,9 +100,8 @@ The numbers in the parenthesis next to the names represent what grade in school 
 
 **Team 3:**
 
-* **Captain: Allison Kim(11)**  
+* **Captain: Amir-Rayan Siqal (12)**  
 * Julianne Chen (12)  
-* Amir Siqal (12)  
 * Claire Kim(9)  
 * Yul Park (9)  
 * Sharon Kim (6)  
