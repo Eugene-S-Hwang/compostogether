@@ -49,7 +49,6 @@ from langchain.chains import ConversationalRetrievalChain
 
 
 
-
 # Load, chunk and index the contents 
 md_path = "./ComposTogether.md"
 
