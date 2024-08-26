@@ -14,7 +14,7 @@ modelname = 'ch-doonoi-01:latest'
 
 host="http://68.173.160.106:11434"
 
-llm = Ollama(base_url=host, model="ch-doonoi-01:latest", num_gpu=2)
+llm = Ollama(base_url=host, model="ch-doonoi-01:latest", num_gpu=2, temperature=0)
 
 # Data Loading #######
 from langchain import hub
