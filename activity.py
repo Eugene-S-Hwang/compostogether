@@ -71,3 +71,10 @@ if not data.empty:
     st.plotly_chart(fig)
 else:
     st.write("No graph available")
+
+if not data.empty:
+    ratio_data = pd.DataFrame({"Date":list(data["Date"]), "Ratio": [float(brown_data["Browns"][i]) / float(green_data["Greens"][i]) for i in range(len(brown_data["Browns"]))]})
+    fig = px.line(ratio_data, x='Date', y='Ratio', title="History of Brown to Green Ratio in Buckets")
+    st.plotly_chart(fig)
+else:
+    st.write("No graph available")
